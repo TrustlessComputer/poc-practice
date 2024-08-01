@@ -1,0 +1,43 @@
+# Proof of Code Practice
+
+# Introduction
+Welcome to Proof Of Code, the weekly crypto coding competition with weekly prize pools of $500, starting with Solidity problems. Hosted by ***BVM***, the leading Rollup-As-A-Service platform on Bitcoin, Proof Of Code allows anyone to launch their own blockchain on Bitcoin for just $99/month.
+
+# Register 
+To register for Proof Of Code, please visit [ProofOfCode.com](https://dev.bvm.network/PoC).
+
+# Solve problems
+To solve problems, follow these steps:
+## Step 1: Clone the Repository
+Clone this repository using the command:
+```
+git clone https://github.com/TrustlessComputer/poc-practice.git
+```
+## Step 2: Install Dependencies
+Navigate to the project directory and install the required dependencies:
+```
+cd poc-practice
+npm install 
+```
+## Step 3: Set Up Your Private Key
+Create a `.env` file in the root directory of the project and add your private key as follows:
+```
+ZKNET_DEPLOYER_PRIVATE_KEY=YOUR_PRIVATE_KEY
+```
+
+## Step 4: Solve the Problem
+Each problem is located in its own folder. For example, the problem `ArraySort` can be found in the [ArraySort](contracts/ArraySort/) folder. The problem must be solved using Solidity.
+
+For the ArraySort problem, you will find two files: [ArraySort.sol](contracts/ArraySort/ArraySort.sol) and [IArraySort.sol](contracts/ArraySort/IArraySort.sol). To solve the `ArraySort` problem, modify the `solve` function in [ArraySort.sol](contracts/ArraySort/ArraySort.sol).
+
+
+## Step 5: Deploy Your Solution to BVM Chain
+To deploy your solution, run the deployment script. For example, to deploy the `ArraySort` solution, use the following command:
+
+```
+npx hardhat run scripts/deployArraySort.ts
+```
+
+
+# Need help?
+Join our community on [BVM](https://bvm.network/).
