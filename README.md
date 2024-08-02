@@ -1,7 +1,7 @@
 # Proof of Code Practice
 
 # Introduction
-Welcome to Proof Of Code, the weekly crypto coding competition with weekly prize pools of $500, starting with Solidity problems. Hosted by ***BVM***, the leading Rollup-As-A-Service platform on Bitcoin, Proof Of Code allows anyone to launch their own blockchain on Bitcoin for just $99/month.
+Welcome to Proof of Code, a weekly crypto coding competition with prize pools of $500, focusing initially on Solidity problems. Hosted by **BVM**, the leading Rollup-As-A-Service platform on Bitcoin, Proof of Code enables anyone to launch their own blockchain on Bitcoin for just $99/month.
 
 # Register 
 To register for Proof Of Code, please visit [BVMPoC](https://dev.bvm.network/PoC).
@@ -24,7 +24,6 @@ Create a `.env` file in the root directory of the project and add your private k
 ```
 ZKNET_DEPLOYER_PRIVATE_KEY=YOUR_PRIVATE_KEY
 ```
-
 ## Step 4: Solve the Problem
 Each problem is located in its own folder. For example, the problem `ArraySort` can be found in the [ArraySort](contracts/ArraySort/) folder. The problem must be solved using Solidity.
 
@@ -35,9 +34,15 @@ For the ArraySort problem, you will find two files: [ArraySort.sol](contracts/Ar
 To deploy your solution, run the deployment script. For example, to deploy the `ArraySort` solution, use the following command:
 
 ```
-npx hardhat run scripts/deployArraySort.ts
+npx hardhat run scripts/deployArraySort.ts --network zknet
 ```
 
+*Note: Make sure you have enough funds in your account to deploy the contract.*
 
+## Step 6: Test Your Solution
+Following deployment, you will receive the address of the deployed contract. Use this address to test your solution. For example, to test the deployed `ArraySort` solution, use the following command:
+```
+bash test-arraysort.sh <CONTRACT_ADDRESS>
+```
 # Need help?
 Join our community on [BVM](https://bvm.network/).

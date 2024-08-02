@@ -4,6 +4,7 @@ import '@nomicfoundation/hardhat-toolbox';
 import '@nomiclabs/hardhat-solhint';
 import 'hardhat-contract-sizer'
 import "@matterlabs/hardhat-zksync";
+import "./scripts/test.task";
 
 let localTestMnemonic = "test test test test test test test test test test test junk";
 const config: HardhatUserConfig = {

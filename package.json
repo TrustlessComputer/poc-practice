@@ -3,8 +3,7 @@
   "scripts": {
     "node:anvil": "anvil --prune-history --order fifo --code-size-limit 4294967296 -m \"test test test test test test test test test test test junk\" --gas-limit 1000000000000 --block-time 3",
     "console:local": "npx hardhat --network localhost console",
-    "console:testnet": "npx hardhat --network testnet console",
-    "console:mainnet": "npx hardhat --network mainnet console"
+    "console:zknet": "npx hardhat --network zknet console"
   },
   "devDependencies": {
     "@matterlabs/hardhat-zksync": "^1.1.0",
