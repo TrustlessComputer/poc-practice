@@ -4,7 +4,7 @@
 Welcome to Proof of Code, a weekly crypto coding competition with prize pools of $500, focusing initially on Solidity problems. Hosted by **BVM**, the leading Rollup-As-A-Service platform on Bitcoin, Proof of Code enables anyone to launch their own blockchain on Bitcoin for just $99/month.
 
 # Register 
-To register for Proof Of Code, please visit [BVMPoC](https://dev.bvm.network/PoC).
+To register for Proof Of Code, please visit [BVMPoC](https://bvm.network/PoC).
 
 # Solve problems
 To solve problems, follow these steps:
