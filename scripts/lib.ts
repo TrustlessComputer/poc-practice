@@ -25,3 +25,10 @@ export async function deployContractToZKNet(hre: HardhatRuntimeEnvironment, arti
 
     return contract;
 }
+
+export async function deployContract(hre: HardhatRuntimeEnvironment, artifactName: string): Promise<ethers.BaseContract> {
+    const { ethers } = hre;
+    const [ deployer ] = await ethers.getSigners();
+    const GCD = await ethers.deployContract(artifactName, deployer);
+    return await GCD.waitForDeployment();
+}

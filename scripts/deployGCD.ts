@@ -1,19 +1,16 @@
 import hre from "hardhat";
-import * as GCDArtifact from '../artifacts/contracts/GCD/GCD.sol/GCD.json';
-import { deployContractToZKNet } from "./lib";
+import { deployContract, deployContractToZKNet } from "./lib";
 import { ethers } from "ethers";
+
+const GCD_CONTRACT_NAME = "GCD";
 
 async function deployGCD() {
     let gcd: ethers.BaseContract;
 
     if (hre.network.name === "zknet") {
-        gcd = await deployContractToZKNet(hre, "GCD");
+        gcd = await deployContractToZKNet(hre, GCD_CONTRACT_NAME);
     } else {
-        const { ethers } = hre;
-        const [ deployer ] = await ethers.getSigners();    
-        const GCDFac = new ethers.ContractFactory(GCDArtifact.abi, GCDArtifact.bytecode, deployer);    
-        const GCD = await GCDFac.deploy();
-        gcd = await GCD.waitForDeployment();
+        gcd = await deployContract(hre, GCD_CONTRACT_NAME);
     }
 
     const address = await gcd.getAddress();
