@@ -1,19 +1,16 @@
 import hre from "hardhat";
-import * as LibraryArtifact from '../artifacts/contracts/Library/Library.sol/Library.json';
-import { deployContractToZKNet } from "./lib";
+import { deployContract, deployContractToZKNet } from "./lib";
 import { ethers } from "ethers";
+
+const LIBRARY_CONTRACT_NAME = "Library";
 
 async function deployLibrary() {
     let library: ethers.BaseContract;
 
     if (hre.network.name === "zknet") {
-        library = await deployContractToZKNet(hre, "Library");
+        library = await deployContractToZKNet(hre, LIBRARY_CONTRACT_NAME);
     } else {
-        const { ethers } = hre;
-        const [ deployer ] = await ethers.getSigners();    
-        const LibraryFac = new ethers.ContractFactory(LibraryArtifact.abi, LibraryArtifact.bytecode, deployer);    
-        const Library = await LibraryFac.deploy();
-        library = await Library.waitForDeployment();
+        library = await deployContract(hre, LIBRARY_CONTRACT_NAME);
     }
 
     const address = await library.getAddress();
