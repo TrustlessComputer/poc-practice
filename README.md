@@ -48,7 +48,7 @@ bash test-arraysort.sh <CONTRACT_ADDRESS>
 Option 1:
 You can submit your solution by using the following command:
 ```
-bash submit.sh <tx_hash>
+bash submit.sh <problem_id> <tx_id>
 ```
 Option 2:
 Submit your solution on our website [BVMPoC](https://bvm.network/PoC) to participate in the competition.
