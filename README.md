@@ -45,12 +45,9 @@ Following deployment, you will receive the address of the deployed contract. Use
 bash test-arraysort.sh <CONTRACT_ADDRESS>
 ```
 ## Step 7: Submit Your Solution
-Option 1:
 You can submit your solution by using the following command:
 ```
 bash submit.sh <problem_id> <tx_id>
 ```
-Option 2:
-Submit your solution on our website [BVMPoC](https://bvm.network/PoC) to participate in the competition.
 # Need help?
 Join our community on [BVM](https://bvm.network/).
