@@ -14,7 +14,8 @@ async function deployLibrary() {
     }
 
     const address = await library.getAddress();
-    console.log(`Deployed Library contract on ${hre.network.name} network at address ${address}`);
+    const tx = library.deploymentTransaction();
+    console.log(`Deployed ArraySort contract on ${hre.network.name} network at address ${address}, tx: ${tx?.hash}.`);
 }
 
 deployLibrary()

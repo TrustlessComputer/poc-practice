@@ -18,11 +18,10 @@ export async function deployContractToZKNet(hre: HardhatRuntimeEnvironment, arti
     const artifact = await deployer.loadArtifact(artifactName);
     const deploymentFee = await deployer.estimateDeployFee(artifact, []);
     const parsedFee = ethers.formatEther(deploymentFee.toString());
-    console.log(`The deployment is estimated to cost ${parsedFee} BVM`);
+    console.log(`The deployment is estimated to cost ${parsedFee} BVM.`);
     // Deploy the contract
     const contract = await deployer.deploy(artifact, []);
     await contract.waitForDeployment();
-
     return contract;
 }
 

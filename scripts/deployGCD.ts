@@ -14,7 +14,8 @@ async function deployGCD() {
     }
 
     const address = await gcd.getAddress();
-    console.log(`Deployed GCD contract on ${hre.network.name} network at address ${address}`);
+    const tx = gcd.deploymentTransaction();
+    console.log(`Deployed GCD contract on ${hre.network.name} network at address ${address}, tx: ${tx?.hash}.`);
 }
 
 deployGCD()
