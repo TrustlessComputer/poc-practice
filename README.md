@@ -44,6 +44,7 @@ ZKNET_DEPLOYER_PRIVATE_KEY=YOUR_PRIVATE_KEY
 
 ## Step 5: Solve the Problem
 Each problem is located in its own folder. For example, the problem `ArraySort` can be found in the [ArraySort](contracts/ArraySort/) folder. The problem must be solved using Solidity.
+
 For the ArraySort problem, you will find two files: [ArraySort.sol](contracts/ArraySort/ArraySort.sol) and [IArraySort.sol](contracts/ArraySort/IArraySort.sol). To solve the `ArraySort` problem, modify the `solve` function in [ArraySort.sol](contracts/ArraySort/ArraySort.sol).
 
 ## Step 6: Deploy Your Solution to BVM Chain
