@@ -15,7 +15,12 @@ async function deployArraySort() {
     
     const address = await arraySort.getAddress();    
     const tx = arraySort.deploymentTransaction();
-    console.log(`Deployed ArraySort contract on ${hre.network.name} network at address ${address}, tx: ${tx?.hash}`);
+    console.log(
+        `ArraySort contract deployed on ${hre.network.name} network.\n` +
+        `Address: ${address}\n` +
+        `Problem ID: 2\n` +
+        `Transaction ID: ${tx?.hash}`
+    );
 }
 
 deployArraySort()
