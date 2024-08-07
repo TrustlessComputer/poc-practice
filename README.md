@@ -28,7 +28,9 @@ npm install
 ```
 ## Step 3: Create a wallet
 Go to [BVMPoC](https://bvm.network/PoC).
+
 Click `Sign in` using your Twitter or Gmail account.
+
 Export your private key from the website. 
 
 <img src="export_private_key.png" alt="Proof of Code Practice Logo" width="600"/>
@@ -65,4 +67,4 @@ You can submit your solution by using the following command:
 bash submit.sh <problem_id> <tx_id>
 ```
 # Need help?
-Join the Proof of Code community: [PoC](https://t.me/PoCBVM).
+Join the Proof of Code community: [PoC Community](https://t.me/PoCBVM).
