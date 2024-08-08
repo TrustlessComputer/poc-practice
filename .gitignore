@@ -1,0 +1,15 @@
+/.idea
+/.vscode
+/artifacts
+/artifacts-zk
+/cache
+/cache-zk
+/deployments
+/deployments-zk
+/node_modules
+/test-results
+/typechain-types
+.DS_Store
+.env
+.venv
+
