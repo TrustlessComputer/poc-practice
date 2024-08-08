@@ -18,7 +18,7 @@ async function deployLibrary() {
     }
     console.log(
         `ArraySort contract deployed on ${hre.network.name} network.\n` +
-        `Problem ID: 3\n`
+        `Problem ID: ${configObject.ProblemID}\n`
     );
 }
 
