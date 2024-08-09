@@ -1,26 +1,32 @@
 {
-  "name": "solidity-competitive-programming",
+  "name": "hello-zksync-quickstart",
+  "description": "A template for zkSync smart contracts development with Hardhat",
+  "private": true,
+  "author": "Matter Labs",
+  "license": "MIT",
+  "repository": "https://github.com/matter-labs/zksync-hardhat-template.git",
   "scripts": {
-    "node:anvil": "anvil --prune-history --order fifo --code-size-limit 4294967296 -m \"test test test test test test test test test test test junk\" --gas-limit 1000000000000 --block-time 3",
-    "console:local": "npx hardhat --network localhost console",
-    "console:zknet": "npx hardhat --network zknet console"
+    "deploy": "hardhat deploy-zksync --script deploy.ts",
+    "compile": "hardhat compile",
+    "clean": "hardhat clean" 
   },
   "devDependencies": {
-    "@matterlabs/hardhat-zksync": "^1.1.0",
-    "@nomicfoundation/hardhat-network-helpers": "^1.0.11",
-    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
-    "@nomiclabs/hardhat-solhint": "^3.1.0",
-    "@typechain/ethers-v6": "^0.5.1",
-    "@typechain/hardhat": "^9.1.0",
-    "@types/random-seed": "^0.3.5",
-    "@types/seedrandom": "^3.0.8",
-    "dotenv": "^16.4.5",
-    "ethers": "^6.13.2",
-    "hardhat-contract-sizer": "^2.10.0",
-    "mocha-junit-reporter": "^2.2.1",
-    "mocha-multi-reporters": "^1.5.1",
-    "random": "^4.1.0",
-    "random-seed": "^0.3.0",
-    "zksync-ethers": "^6.11.0"
+    "@matterlabs/hardhat-zksync": "^1.0.0",
+    "@matterlabs/zksync-contracts": "^0.6.1",
+    "@nomiclabs/hardhat-etherscan": "^3.1.7",
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.6",
+    "@openzeppelin/contracts": "^4.6.0",
+    "@openzeppelin/contracts-upgradeable": "4.6.0",
+    "@openzeppelin/upgrades-core": "^1.32.5",
+    "@types/chai": "^4.3.4",
+    "@types/mocha": "^10.0.1",
+    "chai": "^4.3.7",
+    "dotenv": "^16.0.3",
+    "ethers": "^6.9.2",
+    "hardhat": "^2.12.4",
+    "mocha": "^10.2.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5",
+    "zksync-ethers": "^6.7.0"
   }
 }

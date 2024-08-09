@@ -49,11 +49,14 @@ For the ArraySort problem, you will find two files: [ArraySort.sol](contracts/Ar
 
 ## Step 6: Deploy Your Solution to BVM Chain
 
-To deploy your solution, run the deployment script. For example, to deploy the `ArraySort` solution, use the following command:
+To deploy your solution, run the deployment script with the following command:
 
 ```bash
-npx hardhat run scripts/deployArraySort.ts --network zknet
+npx hardhat run scripts/deploy.ts --problem PROBLEM_NAME --contract CONTRACT_NAME
 ```
+***Notes***:
+- The `-p` parameter means the problem you want to solve, and it is **required**. For instance, if you want to solve the `ArraySort` problem, you should use `-p ArraySort`.
+- The `-c` parameter means the contract you want to deploy, and it is **optional**. If you don't specify the contract, the deployment script will deploy the default contract which is the same as the problem name.
 
 *Note: The competition and practice sessions are **completely free to join**, you won’t have to pay anything. All gas fees are automatically covered in the backend.*
 
