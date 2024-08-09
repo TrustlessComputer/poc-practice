@@ -1,0 +1,17 @@
+{
+  "GCD": 1,
+  "ArraySort": 2,
+  "Library": 3,
+  "APlusB": 4,
+  "Triangles": 5,
+  "Rotation": 6,
+  "RangeAddition": 7,
+  "Courses": 8,
+  "Josephus": 9,
+  "XorQuery": 10,
+  "HouseRobber": 11,
+  "HammingDistance": 12,
+  "ClosestSum": 13,
+  "SplitArray": 14,
+  "NoRepeat": 15
+}
