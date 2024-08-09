@@ -47,12 +47,18 @@ Each problem is located in its own folder. For example, the problem `ArraySort` 
 
 For the ArraySort problem, you will find two files: [ArraySort.sol](contracts/ArraySort/ArraySort.sol) and [IArraySort.sol](contracts/ArraySort/IArraySort.sol). To solve the `ArraySort` problem, modify the `solve` function in [ArraySort.sol](contracts/ArraySort/ArraySort.sol).
 
-## Step 6: Deploy Your Solution to BVM Chain
+## Step 6: Compile Your Solution
+To compile your solution, run the following command:
+```bash
+npx hardhat compile
+```
+
+## Step 7: Deploy Your Solution to BVM Chain
 
 To deploy your solution, run the deployment script with the following command:
 
 ```bash
-npx hardhat run scripts/deploy.ts --p PROBLEM_NAME --c CONTRACT_NAME
+npx hardhat deploy --p PROBLEM_NAME --c CONTRACT_NAME
 ```
 ***Notes***:
 - The `-p` parameter means the problem you want to solve, and it is **required**. For instance, if you want to solve the `ArraySort` problem, you should use `-p ArraySort`.
@@ -60,12 +66,12 @@ npx hardhat run scripts/deploy.ts --p PROBLEM_NAME --c CONTRACT_NAME
 
 *Note: The competition and practice sessions are **completely free to join**, you won’t have to pay anything. All gas fees are automatically covered in the backend.*
 
-## Step 7: Test Your Solution
+## Step 8: Test Your Solution
 Following deployment, you will receive the address of the deployed contract. Use this address to test your solution. For example, to test the deployed ArraySort solution, use the following command:
 ```bash
 bash test-arraysort.sh <CONTRACT_ADDRESS>
 ```
-## Step 8: Submit Your Solution
+## Step 9: Submit Your Solution
 You can submit your solution by using the following command:
 ```bash
 bash submit.sh <problem_id> <tx_id>

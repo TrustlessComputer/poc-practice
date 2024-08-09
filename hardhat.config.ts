@@ -1,6 +1,8 @@
 import { HardhatUserConfig } from "hardhat/config";
 import 'dotenv/config';
 import "@matterlabs/hardhat-zksync";
+import "@nomicfoundation/hardhat-network-helpers";
+import "@nomicfoundation/hardhat-toolbox";
 import "./scripts/deploy.task";
 import "./scripts/test.task"
 
