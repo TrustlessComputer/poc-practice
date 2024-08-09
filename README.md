@@ -52,7 +52,7 @@ For the ArraySort problem, you will find two files: [ArraySort.sol](contracts/Ar
 To deploy your solution, run the deployment script with the following command:
 
 ```bash
-npx hardhat run scripts/deploy.ts --problem PROBLEM_NAME --contract CONTRACT_NAME
+npx hardhat run scripts/deploy.ts --p PROBLEM_NAME --c CONTRACT_NAME
 ```
 ***Notes***:
 - The `-p` parameter means the problem you want to solve, and it is **required**. For instance, if you want to solve the `ArraySort` problem, you should use `-p ArraySort`.
