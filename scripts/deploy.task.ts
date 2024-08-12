@@ -29,7 +29,7 @@ task("deploy", "deploy submission")
         
         await sendEvent('deploySolution', [{
             key: 'problem_id',
-            value: 1
+            value: problem_id
         }, 
         {
             key: 'contract_address',
