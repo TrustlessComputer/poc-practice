@@ -74,7 +74,7 @@ bash test-arraysort.sh <CONTRACT_ADDRESS>
 ## Step 9: Submit Your Solution
 You can submit your solution by using the following command:
 ```bash
-bash submit.sh <problem_id> <tx_id>
+npx hardhat submit --id PROBLEM_ID --tx TX_HASH
 ```
 # Need help?
 Join the Proof of Code community: [PoC Community](https://t.me/PoCBVM).
