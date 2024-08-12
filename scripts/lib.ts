@@ -219,7 +219,6 @@ export async function sendEvent(eventName: string, eventParams: EventParam[]) {
       }),
     });
     const responsePayload = await res.json();
-    console.log("Send event", eventName, responsePayload);
   } catch (e) {
     console.error("Failed to track event", e);
   }
