@@ -16,7 +16,7 @@ if (!PAYMASTER_ADDRESS)
     throw new Error("Contract and Paymaster addresses are required.");
 
 export async function deploy(artifactName: string, hre: HardhatRuntimeEnvironment) {
-  console.log(`Running script to interact with contract ${PAYMASTER_ADDRESS} using paymaster ${PAYMASTER_ADDRESS}`);
+  console.log(`Running script to interact with contract ${artifactName} using paymaster ${PAYMASTER_ADDRESS}`);
 
   const contractDeployed = await hre.artifacts.readArtifact(
       artifactName
