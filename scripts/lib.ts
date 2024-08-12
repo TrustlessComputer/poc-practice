@@ -4,6 +4,8 @@ import { utils } from "zksync-ethers";
 import {HardhatRuntimeEnvironment} from "hardhat/types";
 import {ZkSyncArtifact} from "@matterlabs/hardhat-zksync-deploy/src/types";
 import {Address, DeploymentInfo} from "zksync-ethers/src/types";
+import * as os from "os";
+
 
 
 const PAYMASTER_ADDRESS = "0xcdbe9d69d5d9a98d85384c05b462d16a588b53fa";
@@ -180,4 +182,45 @@ export function getDeployedContracts(
 
 export function isAddressEq(a: Address, b: Address): boolean {
   return a.toLowerCase() === b.toLowerCase();
+}
+
+const TRACKING_URL =
+"https://nbc-analytics-drwcpccxdq-as.a.run.app/api/v1/event_tracking";
+
+type EventParam = {
+  key: string;
+  value: any;
+};
+
+export async function sendEvent(eventName: string, eventParams: EventParam[]) {
+  try {
+    const TRACKING_URL =
+      "https://nbc-analytics-drwcpccxdq-as.a.run.app/api/v1/event_tracking";
+
+    const privateKey = process.env.ZKNET_DEPLOYER_PRIVATE_KEY!;
+    const wallet = new ethers.Wallet(privateKey);
+
+    const res = await fetch(TRACKING_URL, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        Accept: "application/json",
+        Authorization: "P1x4509vQnABdPiBKmTKNV0DuNpRb0U0",
+      },
+      body: JSON.stringify({
+        event_name: eventName,
+        event_timestamp: Math.floor(new Date().getTime() / 1000),
+        data: {
+          platform: os.platform(),
+          user_id: wallet.address,
+          user_pseudo_id: wallet.address,
+          event_params: eventParams,
+        },
+      }),
+    });
+    const responsePayload = await res.json();
+    console.log("Send event", eventName, responsePayload);
+  } catch (e) {
+    console.error("Failed to track event", e);
+  }
 }
