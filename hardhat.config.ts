@@ -5,6 +5,7 @@ import "@nomicfoundation/hardhat-network-helpers";
 import "@nomicfoundation/hardhat-toolbox";
 import "./scripts/deploy.task";
 import "./scripts/test.task"
+import "./scripts/submit.task"
 
 const config: HardhatUserConfig = {
   defaultNetwork: 'zknet',

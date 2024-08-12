@@ -26,6 +26,9 @@ Navigate to the project directory and install the required dependencies:
 cd poc-practice
 npm install 
 ```
+
+***Note: This repository requires node.js version 20.11.1 or higher.***
+
 ## Step 3: Create a wallet
 Go to [BVMPoC](https://bvm.network/PoC).
 
@@ -61,7 +64,7 @@ To deploy your solution, run the deployment script with the following command:
 npx hardhat deploy --p PROBLEM_NAME --c CONTRACT_NAME
 ```
 ***Notes***:
-- The `-p` parameter means the problem you want to solve, and it is **required**. For instance, if you want to solve the `ArraySort` problem, you should use `-p ArraySort`.
+- The `-p` parameter means the problem you want to solve, and it is **required**. For instance, if you want to solve the `ArraySort` problem, you should use `--p ArraySort`.
 - The `-c` parameter means the contract you want to deploy, and it is **optional**. If you don't specify the contract, the deployment script will deploy the default contract which is the same as the problem name.
 
 *Note: The competition and practice sessions are **completely free to join**, you won’t have to pay anything. All gas fees are automatically covered in the backend.*
@@ -74,7 +77,10 @@ bash test-arraysort.sh <CONTRACT_ADDRESS>
 ## Step 9: Submit Your Solution
 You can submit your solution by using the following command:
 ```bash
-bash submit.sh <problem_id> <tx_id>
+npx hardhat submit --id PROBLEM_ID --tx TX_HASH
 ```
+***Notes***:
+- The `--id` parameter means the problem ID you want to submit, and it is **required**. This parameter can be found after deploying the contract solution in [step 7](#step-7-deploy-your-solution-to-bvm-chain).
+- The `--tx` parameter means the transaction hash of the contract deployment, and it is **required**. This parameter can be found after deploying the contract solution in [step 7](#step-7-deploy-your-solution-to-bvm-chain).
 # Need help?
 Join the Proof of Code community: [PoC Community](https://t.me/PoCBVM).
