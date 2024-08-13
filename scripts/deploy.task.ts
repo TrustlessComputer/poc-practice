@@ -5,24 +5,16 @@ import fs from "fs";
 
 task("deploy", "deploy submission")
     .addParam("p", "Problem name")
-    .addOptionalParam("c", "Contract name", undefined, types.string)
     .setAction(async (taskArgs: any, hre: HardhatRuntimeEnvironment) => {
         try {
-            const { p: problemName, c: contractName } = taskArgs;
+            const { p: problemName} = taskArgs;
             const metadata = JSON.parse(fs.readFileSync("scripts/metadata.json", 'utf8'));
-            let contractArtifactName: string;
-            if (contractName) {
-                contractArtifactName = contractName;
-            } else {
-                contractArtifactName = problemName;
-            }
             const problem_id = String(metadata[problemName]);
-            // add tracking start 
             await sendEvent('deploySolutionStart', [{
                 key: 'problem_id',
                 value: problem_id
             }]);
-            const tx_json = await deploy(contractArtifactName, hre);
+            const tx_json = await deploy(problemName, hre);
             const tx = tx_json.hash;
             const address = tx_json.address[0];
             console.log(
@@ -30,7 +22,7 @@ task("deploy", "deploy submission")
                 `Problem Name: ${problemName}\n` +
                 `Problem ID: ${problem_id}\n` +
                 `Contract Address: ${address}\n` +
-                `Transaction Hash: ${tx}\n`
+                `Transaction Hash: ${tx}`
             );
             
             await sendEvent('deploySolutionSucceed', [{
@@ -54,6 +46,5 @@ task("deploy", "deploy submission")
             }
         ]);
         }
-        // add tracking failed
     });
 
