@@ -74,7 +74,7 @@ To test your solution, you must modify the [input.json](./scripts/input.json) fi
 
 ```json
 {
-  "input": [3, 1, 2, 4, 5]
+  "a": [3, 1, 2, 4, 5]
 }
 ```
 Then, run the following command to test your solution:
