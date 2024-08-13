@@ -4,10 +4,10 @@ import { deploy, sendEvent} from "./lib";
 import fs from "fs";
 
 task("deploy", "deploy submission")
-    .addParam("p", "Problem name")
+    .addParam("problemName", "Problem name")
     .setAction(async (taskArgs: any, hre: HardhatRuntimeEnvironment) => {
         try {
-            const { p: problemName} = taskArgs;
+            const {problemName} = taskArgs;
             const metadata = JSON.parse(fs.readFileSync("scripts/metadata.json", 'utf8'));
             const problem_id = String(metadata[problemName]);
             await sendEvent('deploySolutionStart', [{

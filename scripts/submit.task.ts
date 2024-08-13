@@ -13,7 +13,7 @@ task("submit", "submit solution")
             });
             const responsePayload = await res.json();
             if (responsePayload.status > 0) {
-                console.log("Solution submitted successfully");
+                console.log("Solution submitted successfully 🚀.")
             }
             else {
                 console.error("Failed to submit solution", responsePayload.message);
