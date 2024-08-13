@@ -65,7 +65,7 @@ npx hardhat deploy --problem-name PROBLEM_NAME
 ```
 ***Notes***:
 
-The `--problem-name` parameter means the problem name you want to deploy, and it is **required**. For example, to deploy the `ArraySort` solution, use the following command:
+The `--problem-name` parameter means the problem name you want to deploy, and it is **required**.
 
 *Note: The competition and practice sessions are **completely free to join**, you won’t have to pay anything. All gas fees are automatically covered in the backend.*
 
