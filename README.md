@@ -26,7 +26,6 @@ Navigate to the project directory and install the required dependencies:
 cd poc-practice
 npm install 
 ```
-
 ***Note: This repository requires node.js version 20.11.1 or higher.***
 
 ## Step 3: Create a wallet
@@ -45,10 +44,18 @@ Create a `.env` file in the root directory of the project and add your private k
 ZKNET_DEPLOYER_PRIVATE_KEY=YOUR_PRIVATE_KEY
 ```
 
-## Step 5: Solve the Problem
-Each problem is located in its own folder. For example, the problem `ArraySort` can be found in the [ArraySort](contracts/ArraySort/) folder. The problem must be solved using Solidity.
+## Set up your username
 
-For the `ArraySort` problem, you will find two files: [ArraySort.sol](contracts/ArraySort/ArraySort.sol) and [IArraySort.sol](contracts/ArraySort/IArraySort.sol). To solve the `ArraySort` problem, modify the `solve` function in [ArraySort.sol](contracts/ArraySort/ArraySort.sol).
+To set your username, run the following command:
+
+```bash
+npx hardhat set-username --username YOUR_USERNAME
+```
+
+## Step 5: Solve the Problem
+Each problem is located in its own folder. For example, the problem `APlusB` can be found in the [APlusB](contracts/APlusB/) folder. The problem must be solved using Solidity.
+
+For the `APlusB` problem, you will find two files: [APlusB.sol](contracts/APlusB/APlusB.sol) and [IAPlusB.sol](contracts/APlusB/IAPlusB.sol). To solve the `APlusB` problem, modify the `solve` function in [APlusB.sol](contracts/APlusB/APlusB.sol).
 
 ## Step 6: Compile Your Solution
 To compile your solution, run the following command:
@@ -63,9 +70,12 @@ To deploy your solution, run the deployment script with the following command:
 ```bash
 npx hardhat deploy --problem-name PROBLEM_NAME
 ```
-***Notes***:
-
 The `--problem-name` parameter means the problem name you want to deploy, and it is **required**.
+
+For example, to deploy the `APlusB` solution, run the following command:
+```bash
+npx hardhat deploy --problem-name APlusB
+```
 
 *Note: The competition and practice sessions are **completely free to join**, you won’t have to pay anything. All gas fees are automatically covered in the backend.*
 
@@ -81,9 +91,15 @@ Then, run the following command to test your solution:
 ```bash
 npx hardhat testSolution --problem-name PROBLEM_NAME --address CONTRACT_ADDRESS
 ```
+
 ***Notes***:
 - The `--problem-name` parameter means the problem name you want to test, and it is **required**.
 - The `--address` parameter means the contract address of the deployed solution (after deploying solution in [step 7](#step-7-deploy-your-solution-to-bvm-chain)), and it is **required**.
+
+For example, assume you want to test the `APlusB` solution with the contract address `0x123456789`, you can run the following command:
+```bash
+npx hardhat testSolution --problem-name APlusB --address 0x123456789
+```
 ## Step 9: Submit Your Solution
 You can submit your solution by using the following command:
 ```bash
@@ -92,5 +108,13 @@ npx hardhat submit --id PROBLEM_ID --tx TX_HASH
 ***Notes***:
 - The `--id` parameter means the problem ID you want to submit, and it is **required**. This parameter can be found after deploying the contract solution in [step 7](#step-7-deploy-your-solution-to-bvm-chain).
 - The `--tx` parameter means the transaction hash of the contract deployment, and it is **required**. This parameter can be found after deploying the contract solution in [step 7](#step-7-deploy-your-solution-to-bvm-chain).
+
+For example, assume you want to submit the `APlusB` solution with the problem ID `1` and the transaction hash `0x123456789`, you can run the following command:
+```bash
+npx hardhat submit --id 1 --tx 0x123456789
+```
+#
+
+
 # Need help?
 Join the Proof of Code community: [PoC Community](https://t.me/PoCBVM).
