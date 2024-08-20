@@ -80,11 +80,12 @@ npx hardhat deploy --problem-name APlusB
 *Note: The competition and practice sessions are **completely free to join**, you won’t have to pay anything. All gas fees are automatically covered in the backend.*
 
 ## Step 8: Test Your Solution
-To test your solution, you must modify the [input.json](./scripts/input.json) file with the input data you want to test. For example, to test the `ArraySort` solution, modify the [input.json](./scripts/input.json) file as follows:
+To test your solution, you must modify the [input.json](./scripts/input.json) file with the input data you want to test. For example, to test the `APlusB` solution, modify the [input.json](./scripts/input.json) file as follows:
 
 ```json
 {
-  "a": [3, 1, 2, 4, 5]
+  "a": 2,
+  "b": 3
 }
 ```
 Then, run the following command to test your solution:
@@ -113,8 +114,6 @@ For example, assume you want to submit the `APlusB` solution with the problem ID
 ```bash
 npx hardhat submit --id 1 --tx 0x123456789
 ```
-#
-
 
 # Need help?
 Join the Proof of Code community: [PoC Community](https://t.me/PoCBVM).
