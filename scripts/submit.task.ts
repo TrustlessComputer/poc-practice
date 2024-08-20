@@ -1,5 +1,4 @@
 import { task, types } from "hardhat/config";
-import fs from "fs";
 
 task("submit", "submit solution")
     .addParam("id", "Problem ID")
