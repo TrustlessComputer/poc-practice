@@ -57,6 +57,8 @@ Each problem is located in its own folder. For example, the problem `APlusB` can
 
 For the `APlusB` problem, you will find two files: [APlusB.sol](contracts/APlusB/APlusB.sol) and [IAPlusB.sol](contracts/APlusB/IAPlusB.sol). To solve the `APlusB` problem, modify the `solve` function in [APlusB.sol](contracts/APlusB/APlusB.sol).
 
+***Note: Please do not modify the `getProblemName` or `getProblemID` functions.***
+
 ## Step 6: Compile Your Solution
 To compile your solution, run the following command:
 ```bash
@@ -77,7 +79,7 @@ For example, to deploy the `APlusB` solution, run the following command:
 npx hardhat deploy --problem-name APlusB
 ```
 
-*Note: The competition and practice sessions are **completely free to join**, you won’t have to pay anything. All gas fees are automatically covered in the backend.*
+***Note: The competition and practice sessions are **completely free to join**, you won’t have to pay anything. All gas fees are automatically covered in the backend.***
 
 ## Step 8: Test Your Solution
 To test your solution, you must modify the [input.json](./scripts/input.json) file with the input data you want to test. For example, to test the `APlusB` solution, modify the [input.json](./scripts/input.json) file as follows:
@@ -90,30 +92,19 @@ To test your solution, you must modify the [input.json](./scripts/input.json) fi
 ```
 Then, run the following command to test your solution:
 ```bash
-npx hardhat testSolution --problem-name PROBLEM_NAME --address CONTRACT_ADDRESS
+npx hardhat testSolution --tx <TRANSACTION_HASH>
 ```
 
-***Notes***:
-- The `--problem-name` parameter means the problem name you want to test, and it is **required**.
-- The `--address` parameter means the contract address of the deployed solution (after deploying solution in [step 7](#step-7-deploy-your-solution-to-bvm-chain)), and it is **required**.
+***Note***:
+The `--tx` parameter means the transaction hash of the contract deployment, and it is **required**. This parameter can be found after deploying the contract solution in [step 7](#step-7-deploy-your-solution-to-bvm-chain).
 
-For example, assume you want to test the `APlusB` solution with the contract address `0x123456789`, you can run the following command:
-```bash
-npx hardhat testSolution --problem-name APlusB --address 0x123456789
-```
 ## Step 9: Submit Your Solution
 You can submit your solution by using the following command:
 ```bash
-npx hardhat submit --id PROBLEM_ID --tx TX_HASH
+npx hardhat submit --tx <TRANSACTION_HASH>
 ```
-***Notes***:
-- The `--id` parameter means the problem ID you want to submit, and it is **required**. This parameter can be found after deploying the contract solution in [step 7](#step-7-deploy-your-solution-to-bvm-chain).
-- The `--tx` parameter means the transaction hash of the contract deployment, and it is **required**. This parameter can be found after deploying the contract solution in [step 7](#step-7-deploy-your-solution-to-bvm-chain).
-
-For example, assume you want to submit the `APlusB` solution with the problem ID `1` and the transaction hash `0x123456789`, you can run the following command:
-```bash
-npx hardhat submit --id 1 --tx 0x123456789
-```
+***Note***:
+The `--tx` parameter means the transaction hash of the contract deployment, and it is **required**. This parameter can be found after deploying the contract solution in [step 7](#step-7-deploy-your-solution-to-bvm-chain).
 
 # Need help?
 Join the Proof of Code community: [PoC Community](https://t.me/PoCBVM).
